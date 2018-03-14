@@ -1,12 +1,21 @@
 # MicroPython for ESP8266 Quick Guide
 
-### What is MicroPython
+- [What is MicroPython](#what)
+- [Installing Micropython on ESP8266](#install)
+- [Using the Python REPL prompt](#repl)
+- [Using MicroPython](#use)
+- [WebREPL](#webrepl)
+- [CircuitPython](#circuit)
+- [Revert to NodeMCU](#revert)
+- [Sources](#sources)
+___
+### <a name="what"></a>What is MicroPython
 MicroPython is a lean and efficient implementation of the Python 3 programming language that includes a small subset of the Python standard library and is optimised to run on microcontrollers and in constrained environments.
 - [micropython.org](http://micropython.org/)
 - [MicroPython Basics: What is MicroPython?](https://learn.adafruit.com/micropython-basics-what-is-micropython?view=all)
 
 
-### Installing Micropython on ESP8266
+### <a name="install"></a>Installing Micropython on ESP8266
 Download MicroPython latest firmware (.bin file) from [MicroPython downloads](http://micropython.org/download#esp8266).
 ![Download MicroPython firmware](imgs/dl-micropython-firmware.png)
 
@@ -17,16 +26,15 @@ NodeMCU PyFlasher doesn't have to be installed, just double-click it and it'll s
 ![NodeMCU PyFlasher](imgs/nodemcu-pyflasher.png)
 
 
-### Using the Python REPL prompt
+### <a name="repl"></a>Using the Python REPL prompt
 Launch Arduino, set the port of your board and open the Serial monitor.  
 Set line ending on `NL and CR` and baudrate on `115200 baud`.  
 You should be presented with a MicroPython prompt and can now run some MicroPython code on your ESP8266.  
-Let’s make sure it is working with the obligatory test:  
-type `print("hello pyboard!")` and press `[ENTER]`.
+Let’s make sure it is working with the obligatory test: type `print("hello pyboard!")` and press `[ENTER]`.
 ![REPL prompt](imgs/serial-monitor.png)
 
 
-### Using MicroPython
+### <a name="use"></a>Using MicroPython
 You've successfully installed MicroPython on your board, congrats! Let's dig in a bit more.
 Keep the Serial monitor open and type:  
 `import machine` # this will add access to hardware  
@@ -42,7 +50,7 @@ led.off
 [machine — functions related to the hardware](http://docs.micropython.org/en/latest/pyboard/library/machine.html)
 
 
-### WebREPL
+### <a name="webrepl"></a>WebREPL
 Instead of using Serial, we can control our board via a web interface:
 - Type `import webrepl_setup` in order to start the WebREPL daemon on startup.  
 - Type `E` to enable on boot, then type a password, finally type `y` to reboot your board.  
@@ -71,17 +79,17 @@ while( True ):
 You can escape from this loop by hitting `[Ctrl]+[C]`  
 
 
-### CircuitPython
+### <a name="circuit"></a>CircuitPython
 Adafruit is releasing a different flavor of MicroPython named CircuitPython. You can find documentation here:
 - [Adafruit CircuitPython on Github](https://github.com/adafruit/circuitpython)
 - [Adafruit CircuitPython API Reference](http://circuitpython.readthedocs.io/en/latest/docs/index.html)
 
 
-### Revert to NodeMCU
+### <a name="revert"></a>Revert to NodeMCU
 If you want to revert your board to NodeMCU, latest firmware updates can be found on github: [nodemcu/nodemcu-firmware](https://github.com/nodemcu/nodemcu-firmware).  
 And you can get a build [here](https://nodemcu-build.com/) by simply entering your email and click `Start your build`.
 
-### Sources
+### <a name="sources"></a>Sources
 - [The Super Easy Micropython ESP8266 Windows Guide. No Guesswork Required!](http://www.instructables.com/id/The-Super-Easy-Micropython-ESP8266-Guide-No-Guessw/)
 - [Micropython basics on adafruit](https://learn.adafruit.com/search?q=micropython%20basics&)
 - [MicroPython tutorial for ESP8266](https://docs.micropython.org/en/latest/esp8266/esp8266/tutorial/intro.html)
